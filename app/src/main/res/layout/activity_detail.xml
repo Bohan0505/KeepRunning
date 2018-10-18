@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical">
+
+    <RelativeLayout android:id="@+id/title_layout" android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:background="@color/main_color">
+
+        <TextView android:id="@+id/btn_back" android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:layout_centerVertical="true"
+                  android:background="@android:color/transparent"
+                  android:drawableLeft="@drawable/ic_keyboard_arrow_left_black_24dp"
+                  android:gravity="center_vertical"
+                  android:text="Back"
+                  android:textColor="#ffffff"/>
+
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                  android:layout_centerInParent="true"
+                  android:text="Running Log"
+                  android:textColor="#ffffff"
+                  android:textSize="18sp"/>
+
+    </RelativeLayout>
+
+    <FrameLayout android:layout_width="match_parent"
+                 android:layout_height="match_parent">
+
+        <com.baidu.mapapi.map.MapView
+            android:id="@+id/bmapView"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:clickable="true"/>
+
+        <LinearLayout android:id="@+id/layout_run"
+                      android:layout_width="match_parent"
+                      android:layout_height="wrap_content"
+                      android:layout_gravity="bottom"
+                      android:background="#80000000"
+                      android:orientation="horizontal"
+                      android:padding="10dp">
+
+
+            <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content"
+                          android:layout_weight="1"
+                          android:gravity="center"
+                          android:orientation="vertical">
+
+                <TextView android:id="@+id/tv_time" android:layout_width="wrap_content"
+                          android:layout_height="wrap_content"
+                          android:text="00:00:00"
+                          android:textColor="#ffffff"/>
+
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                          android:text="Time"
+                          android:textColor="#ffffff"/>
+
+            </LinearLayout>
+
+            <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content"
+                          android:layout_weight="1"
+                          android:gravity="center"
+                          android:orientation="vertical">
+
+                <TextView android:id="@+id/tv_distance" android:layout_width="wrap_content"
+                          android:layout_height="wrap_content"
+                          android:text="0.0"
+                          android:textColor="#ffffff"/>
+
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                          android:text="km"
+                          android:textColor="#ffffff"/>
+
+            </LinearLayout>
+
+            <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content"
+                          android:layout_weight="1"
+                          android:gravity="center"
+                          android:orientation="vertical">
+
+                <TextView android:id="@+id/tv_speed" android:layout_width="wrap_content"
+                          android:layout_height="wrap_content"
+                          android:text="0"
+                          android:textColor="#ffffff"/>
+
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                          android:text="m/s"
+                          android:textColor="#ffffff"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </FrameLayout>
+
+
+</LinearLayout>

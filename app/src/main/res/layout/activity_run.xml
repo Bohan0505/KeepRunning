@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical">
+
+    <RelativeLayout android:id="@+id/title_layout" android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:background="@color/main_color">
+
+        <TextView android:id="@+id/btn_back" android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:layout_centerVertical="true"
+                  android:background="@android:color/transparent"
+                  android:drawableLeft="@drawable/ic_keyboard_arrow_left_black_24dp"
+                  android:gravity="center_vertical"
+                  android:text="Back"
+                  android:textColor="#ffffff"/>
+
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                  android:layout_centerInParent="true"
+                  android:text="Run"
+                  android:textColor="#ffffff"
+                  android:textSize="18sp"/>
+
+    </RelativeLayout>
+
+
+    <RelativeLayout android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+        <com.baidu.mapapi.map.MapView
+            android:id="@+id/bmapView"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:clickable="true"/>
+
+        <ImageButton
+            android:id="@+id/btn_music"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:background="@android:color/transparent"
+            android:src="@mipmap/ic_music"/>
+
+        <LinearLayout android:layout_width="match_parent"
+                      android:layout_height="wrap_content"
+                      android:layout_above="@id/btn_music"
+                      android:orientation="vertical">
+
+            <LinearLayout android:layout_width="match_parent"
+                          android:layout_height="wrap_content"
+                          android:gravity="center"
+                          android:orientation="horizontal">
+
+                <Button android:id="@+id/btn_start" android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:background="@drawable/shape_circle_blue"
+                        android:gravity="center"
+                        android:text="START"
+                        android:textColor="#ffffff"
+                        android:textSize="20sp"/>
+
+                <Button android:id="@+id/btn_stop" android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:background="@drawable/shape_circle_blue"
+                        android:gravity="center"
+                        android:text="STOP"
+                        android:textColor="#ffffff"
+                        android:textSize="20sp"
+                        android:visibility="gone"/>
+
+                <Button android:id="@+id/btn_pause" android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                        android:background="@drawable/shape_circle_blue"
+                        android:gravity="center"
+                        android:text="PAUSE"
+                        android:textColor="#ffffff"
+                        android:textSize="20sp"
+                        android:visibility="gone"/>
+
+                <Button android:id="@+id/btn_continue" android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:background="@drawable/shape_circle_blue"
+                        android:gravity="center"
+                        android:text="CONTINUE"
+                        android:textColor="#ffffff"
+                        android:textSize="13sp"
+                        android:visibility="gone"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout android:id="@+id/layout_run"
+                      android:layout_width="match_parent"
+                      android:layout_height="wrap_content"
+                      android:background="#80000000"
+                      android:visibility="gone"
+                      android:orientation="horizontal"
+                      android:padding="10dp">
+
+
+            <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content"
+                          android:layout_weight="1"
+                          android:gravity="center"
+                          android:orientation="vertical">
+
+                <TextView android:id="@+id/tv_time" android:layout_width="wrap_content"
+                          android:layout_height="wrap_content"
+                          android:text="00:00:00"
+                          android:textColor="#ffffff"/>
+
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                          android:text="Time"
+                          android:textColor="#ffffff"/>
+
+            </LinearLayout>
+
+            <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content"
+                          android:layout_weight="1"
+                          android:gravity="center"
+                          android:orientation="vertical">
+
+                <TextView android:id="@+id/tv_distance" android:layout_width="wrap_content"
+                          android:layout_height="wrap_content"
+                          android:text="0.0"
+                          android:textColor="#ffffff"/>
+
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                          android:text="km"
+                          android:textColor="#ffffff"/>
+
+            </LinearLayout>
+
+            <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content"
+                          android:layout_weight="1"
+                          android:gravity="center"
+                          android:orientation="vertical">
+
+                <TextView android:id="@+id/tv_speed" android:layout_width="wrap_content"
+                          android:layout_height="wrap_content"
+                          android:text="0"
+                          android:textColor="#ffffff"/>
+
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                          android:text="m/s"
+                          android:textColor="#ffffff"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <RelativeLayout
+            android:id="@+id/progressBarRl"
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:background="@android:color/white"
+            android:visibility="gone">
+
+            <TextView
+                android:id="@+id/info"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="Searching GPS signal, please wait..."
+                android:textColor="@android:color/black"/>
+
+            <ProgressBar
+                android:id="@+id/progressBar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toLeftOf="@id/info"
+                android:paddingLeft="20dp"
+                android:paddingRight="10dp"/>
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+
+</LinearLayout>

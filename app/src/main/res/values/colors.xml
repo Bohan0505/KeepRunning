@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">@color/main_color</color>
+    <color name="colorPrimaryDark">@color/main_color</color>
+    <color name="colorAccent">#FF4081</color>
+    <color name="main_color">#61aadd</color>
+    <color name="music_list_item_unselect_bg_color">#00000000</color>
+    <color name="music_list_item_select_bg_color">#ffd8d8d8</color>
+
+    <color name="music_list_item_title_text_color">#ff2f2f2f</color>
+    <color name="music_list_item_artist_text_color">#ffb2b2b2</color>
+    <color name="music_list_item_duration_text_color">#ff2f2f2f</color>
+    <color name="music_list_item_seq_text_color">#ff828282</color>
+    <color name="music_list_divider_color">#ffb2b2b2</color>
+</resources>
